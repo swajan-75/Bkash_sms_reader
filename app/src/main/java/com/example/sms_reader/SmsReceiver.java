@@ -26,7 +26,7 @@ public class SmsReceiver extends BroadcastReceiver {
 
 
                 if (sender != null && sender.equalsIgnoreCase("bKash")) {
-                    Intent serviceIntent = new Intent(context, TelegramService.class);
+                    Intent serviceIntent = new Intent(context, SmsPostService.class);
                     serviceIntent.putExtra("sender", sender);
                     serviceIntent.putExtra("message", fullMessage.toString());
                     context.startService(serviceIntent);
